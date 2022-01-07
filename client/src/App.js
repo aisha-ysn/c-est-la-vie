@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React,{Component} from 'react';
 import Entries from './pages/Entries';
 import Form from './pages/Journal';
 
