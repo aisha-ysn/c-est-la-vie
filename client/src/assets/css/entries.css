@@ -4,70 +4,21 @@
     background-color: #abdce7af;
   }
   
-  .note-textarea, .note-title {
-    color: #000000;
-    width: 63%;
-    outline: none;
+
+  .remove {
+    background-color: #00232baf;
     border: none;
-    background-color: #bbdee6a4;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* margin-left: 18%; */
-    display: flex;
-    position: absolute;
- 
-    right: 0%;
-    /* margin-top: 2cm; */
-}
-  
-  .note-textarea {
-    resize:vertical;
-    margin-top: 80px;
-    height: 75%;
-    font-size: 2rem;
-
-  }
-  
-  .note-title {
-    height: 50px;
-    font-size: 3rem;
-    padding-top: 0.3cm;
-  }
-
-  .w-100{
-      height: 250px;
-      display: flex;
-      position: absolute;
-      left: 0px;
-      bottom: 0px;
-  }
-
-  .prompts{ 
-    position: absolute;
-    left: 0px;
-    top: 7.5%;
-width: 35%;}
-
-ul {
-    list-style-type: none;
-    /* border: 2px solid yellow; */
-    /* background-color: #BBDEE6; */
-    margin-bottom: 2cm;
-    padding-top: 0.3cm;
-    padding-bottom: 1.5cm;
-    border-right: 2cm;
-  }
-  li {
-    margin: 5px;
-    margin-bottom: 0.2cm;
-    padding: 20px 10px;
-    /* background-color: lightyellow; */
-    background-color: #bbdee667;
-    border-bottom: 1px solid black;
-    /* border-right:  1px solid black ; */
+    color: white;
+    padding: 4px 12px;
+    text-align: center;
+    font-size: 12px;
+    margin: 0.5px 0.3px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 1.2rem;
-
   }
+  
+  .remove:hover {
+    opacity: 1}

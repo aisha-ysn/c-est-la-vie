@@ -48,7 +48,7 @@ class Form extends Component {
                             value={body}
                             onChange={this.handleChange} />
                 </form>
-                <button onClick={this.submitForm} className='button'>Submit</button>
+                <button onClick={this.submitForm} className='button'>Log Journal</button>
             </div>
         )
     }

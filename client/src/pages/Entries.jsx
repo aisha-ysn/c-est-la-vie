@@ -12,7 +12,7 @@ const EntryBody = props => {
             <div key={index}>
                 <h2>{line.title}</h2>
                 <p>{line.body}</p>
-                <button onClick={() => props.removeEntry(index)}>Delete</button>
+                <button onClick={() => props.removeEntry(index)} className='remove'>Remove</button>
             </div>
         )
     })
