@@ -32,7 +32,7 @@ class Form extends Component {
 		return (
 			<div>
 				<form>
-					<p className="line-1 anim-typewriter">My Life Today</p>
+					<p className="line-1 anim-typewriter"> C&apos;est La Vie </p>
 					<input
 						placeholder="Date"
 						type="text"
