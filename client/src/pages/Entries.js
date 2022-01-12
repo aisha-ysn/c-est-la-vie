@@ -29,7 +29,7 @@ const Entries = (props) => {
 			<div className="prompts">
 				<ul>
 					<h1>Writing Prompts:</h1>
-					<li>What do I know to be true that I didn't know a year ago? </li>
+					<li>What do I know to be true that I didn&apost know a year ago? </li>
 					<li>What distractions get in the way of being my most productive? </li>
 					<li>When do I feel most in tune with myself?</li>
 					<li>If someone described me, what would they say? </li>
