@@ -9,6 +9,7 @@ class App extends Component {
     ]
   }
 
+  // Removes Entry
   removeEntry = index => {
     const { entries } = this.state
 
@@ -19,6 +20,7 @@ class App extends Component {
     })
   }
 
+// Journal is shown under entries when submitted
   handleSubmit = entry => {
     this.setState({ entries: [...this.state.entries, entry] })
   }
