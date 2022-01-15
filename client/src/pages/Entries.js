@@ -25,8 +25,8 @@ const Entries = (props) => {
 	const { entryData, removeEntry } = props;
 
 	return (
-		<div className="past">
-			<div className="prompts">
+		<div className="past" >
+			<div className="prompts" contentEditable>
 				<ul>
 					<h1>Writing Prompts:</h1>
 					<li>What do I know to be true that I didn&apos;t know a year ago? </li>
@@ -40,8 +40,10 @@ const Entries = (props) => {
 				</ul>
 			</div>
 			<h2>My Entries</h2>
-			<EntryHeader />
-			<EntryBody entryData={entryData} removeEntry={removeEntry} />
+			<div contentEditable>
+				<EntryHeader />
+				<EntryBody entryData={entryData} removeEntry={removeEntry} />
+			</div>
 		</div>
 	);
 };
