@@ -46,11 +46,11 @@ const resolvers = {
         throw new Error("Could not save entry!");
       },
   
-      removeEntries: async (parent, { entriesId }, context) => {
+      removeEntries: async (parent, { EntriesId }, context) => {
         if (context.user) {
           const updatedUser = await User.findOneAndUpdate(
             { _id: context.user._id },
-            { $pull: { saveEntries: { entriesId } } },
+            { $pull: { saveEntries: { EntriesId } } },
             { new: true }
           );
           return updatedUser;
