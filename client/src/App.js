@@ -10,7 +10,10 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import Navbar from './components/Navbar'
 import Entries from './pages/Entries';
-import Form from './pages/Journal'
+// import Form from './pages/Journal'
+import Home from './pages/Home'
+import LoginForm from './components/LoginForm'
+import SignupForm from './components/SignupForm'
 const httpLink = new createHttpLink({
   uri:"/graphql"})
 
@@ -33,17 +36,20 @@ const client = new ApolloClient({
 });
 
 function App() {
-  return (<ApolloProvider client = {client}>
+  return (
+  <ApolloProvider client = {client}>
     <Router>
       <>
         <Navbar />
         <Switch>
-
-          <Route exact path="/" component = {Entries} />
-         
-          <Route exact path="/journals" component ={Form}/>
           
-          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+          <Route exact path="/" component = {Home} />
+         
+          {/* <Route exact path="/journals" component ={Form}/> */}
+          <Route exact path="/login" component={LoginForm} />
+          <Route exact path="/entries" component={Entries} />
+          <Route exact path="/signup" component={SignupForm} />
+          {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
         </Switch>
       </>
     </Router>
