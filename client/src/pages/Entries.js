@@ -1,9 +1,6 @@
 import React from 'react';
 import '../assets/css/entries.css';
 
-const EntryHeader = () => {
-	return <h3 />;
-};
 
 const EntryBody = (props) => {
 	const lines = props.entryData.map((line, index) => {
@@ -41,7 +38,7 @@ const Entries = (props) => {
 			</div>
 			<h2>My Entries</h2>
 			<div contentEditable>
-				<EntryHeader />
+				
 				<EntryBody entryData={entryData} removeEntry={removeEntry} />
 			</div>
 		</div>
@@ -49,3 +46,4 @@ const Entries = (props) => {
 };
 
 export default Entries;
+

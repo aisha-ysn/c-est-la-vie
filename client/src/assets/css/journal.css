@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
 	text-align: center;
 }
 
@@ -69,10 +69,10 @@ h1 {
 	background-color: #c77dffa2;
 	box-shadow: 0 3px #7a2cbf4b;
 	transform: translateY(4px);
-}
+} */
 
 /* MY LIFE TODAY LOGO */
-body {
+/* body {
 	height: calc(100vh - 8em);
 	padding: 4em;
 	color: rgba(0, 0, 0, 0.75);
@@ -90,10 +90,10 @@ body {
 	white-space: nowrap;
 	overflow: hidden;
 	transform: translateY(-50%);
-}
+} */
 
 /* Animation */
-.anim-typewriter {
+/* .anim-typewriter {
 	animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
 }
 @keyframes typewriter {
@@ -111,7 +111,7 @@ body {
 	to {
 		border-right-color: transparent;
 	}
-}
+} */
 
 /* .prompts{ 
     position: absolute;
