@@ -11,16 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nrakeeb/My-Life-Today.git"
+    "url": "git+https://github.com/aisha-ysn/c-est-la-vie.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nrakeeb/My-Life-Today/issues"
+    "url": "https://github.com/aisha-ysn/c-est-la-vie/issues"
   },
-  "homepage": "https://github.com/nrakeeb/My-Life-Today#readme",
+  "homepage": "https://github.com/aisha-ysn/c-est-la-vie#readme",
   "dependencies": {
-    "concurrently": "^5.1.0",
-    "switch": "^0.0.0"
+    "concurrently": "^5.1.0"
   }
 }
