@@ -36,7 +36,6 @@ const SignupForm = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log(userFormData);
 
     try {
       const { data } = await addUser({
@@ -46,7 +45,7 @@ const SignupForm = () => {
       Auth.login(data.addUser.token);
       history.push("/entries");
     } catch (err) {
-      console.log(err);
+      console.error(err);
       setShowAlert(true);
     }
 
