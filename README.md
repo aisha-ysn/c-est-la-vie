@@ -58,6 +58,6 @@ Link: (https://c-est-la-vie.herokuapp.com/)
 
 ### Contributors
 
-- Github: Find me on GitHub:[nrakeeb] (https://github.com/nrakeeb)
-- Github: Find me on GitHub:[aisha-ysn] (https://github.com/aisha-ysn)
-- Github: Find me on GitHub:[FJVIKTORIJA] (https://github.com/FJVIKTORIJA)
+- Github: Find me on GitHub:[nrakeeb](https://github.com/nrakeeb)
+- Github: Find me on GitHub:[aisha-ysn](https://github.com/aisha-ysn)
+- Github: Find me on GitHub:[FJVIKTORIJA](https://github.com/FJVIKTORIJA)
