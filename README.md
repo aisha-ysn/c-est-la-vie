@@ -56,6 +56,16 @@ Link: (https://c-est-la-vie.herokuapp.com/)
 
 ## Screenshot
 
+![Capture 1](https://user-images.githubusercontent.com/82734765/157332227-17c81034-fa0d-465b-bbd1-e797bcd0f125.PNG)
+
+![Capture 2](https://user-images.githubusercontent.com/82734765/157332245-23d15406-03af-4076-b25c-44828d529248.PNG)
+
+
+#### Screenshot of application on Mobile
+
+![Capture 3](https://user-images.githubusercontent.com/82734765/157332267-0f5cd47e-e9f8-4d73-a3fd-a9663ff51061.PNG)
+
+
 ### Contributors
 
 - Github: Find me on GitHub:[nrakeeb](https://github.com/nrakeeb)
