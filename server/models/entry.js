@@ -13,10 +13,7 @@ const entrySchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-    },
+
 })
 
 module.exports = entrySchema;

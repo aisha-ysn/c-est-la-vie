@@ -1,18 +1,24 @@
 import React, { useState } from "react";
-// import "../assets/css/journal.css";
-import { useMutation, useQuery } from "@apollo/client";
-import { GET_ME } from "../utils/queries";
+import "../assets/css/journal.css";
+import { useMutation } from "@apollo/client";
 import { SAVE_ENTRIES } from "../utils/mutations";
 import Auth from "../utils/auth";
+import { Link } from 'react-router-dom'
+import { GET_ME } from "../utils/queries"
+import { v4 as uuidv4 } from "uuid"
+
 
 const Form = () => {
-  const { loading, data } = useQuery(GET_ME);
-  const [saveEntry, { error }] = useMutation(SAVE_ENTRIES);
+  const [saveEntries, { error }] = useMutation(SAVE_ENTRIES);
+  const { loading, data } = useQuery(GET_ME)
+  const userData = data?.me || {}
   const [entry, setEntry] = useState({
     title: "",
     content: "",
+    EntriesId: `${uuidv4()}`,
+    userId: `${userData._id}`
   });
-  const userData = data?.me || {};
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setEntry({
@@ -25,8 +31,9 @@ const Form = () => {
     if (!token) {
       return false;
     }
+    console.log(entry)
     try {
-      const { data } = await saveEntry({
+      const { data } = await saveEntries({
         variables: { input: { ...entry } },
       });
     } catch (err) {
@@ -56,6 +63,10 @@ const Form = () => {
       <button onClick={handleEntrySave} className="button">
         Log Journal
       </button>
+      <button className="button">
+        <Link to="/"> See Entries </Link>
+      </button>
+
     </div>
   );
 };

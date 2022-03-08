@@ -1,6 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+  Navigate,
+  Outlet
+} from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -15,8 +22,9 @@ import Home from './pages/Home'
 // import Index from './pages/index'
 import LoginForm from './components/LoginForm'
 import SignupForm from './components/SignupForm'
+import Auth from './utils/auth';
 const httpLink = new createHttpLink({
-  uri: "/graphql"
+  uri: "http://localhost:3001/graphql"
 })
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
@@ -37,6 +45,21 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
+function RequireAuth({ children }) {
+
+  let location = useLocation();
+
+  if (!Auth.loggedIn()) {
+    // Redirect them to the /login page, but save the current location they were
+    // trying to go to when they were redirected. This allows us to send them
+    // along to that page after they login, which is a nicer user experience
+    // than dropping them off on the home page.
+    return <Navigate to="/home" state={{ from: location }} replace />;
+  }
+
+  return children;
+}
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -44,11 +67,20 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={
+              <RequireAuth>
+                <Entries />
+              </RequireAuth>
+            } />
+            <Route path="/journal" element={
+              <RequireAuth>
+                <Form />
+              </RequireAuth>
+            } />
+
+            <Route path="/home" element={<Home />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
-            <Route path="/entries" element={<Entries />} />
-            <Route path="/journal" element={<Form />} />
           </Routes>
         </div>
       </Router>

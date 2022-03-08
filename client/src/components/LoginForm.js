@@ -1,9 +1,10 @@
 // see SignupForm.js for comments
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate, useLocation } from "react-router-dom";
 import { Form, Button, Alert } from 'react-bootstrap';
 import '../assets/css/home.css';
+
 
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -13,7 +14,8 @@ const LoginForm = () => {
   const [login, { error }] = useMutation(LOGIN_USER);
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  let navigate = useNavigate();
+
+  let location = useLocation();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -21,8 +23,10 @@ const LoginForm = () => {
   };
 
   const handleFormSubmit = async (event) => {
+    console.log(event)
     event.preventDefault();
     console.log(userFormData)
+    console.log(event)
     // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -40,8 +44,12 @@ const LoginForm = () => {
       // }
 
       // const { token, user } = await response.json();
+      console.log(data)
       Auth.login(data.login.token);
-      navigate("/entries");
+      // if (Auth.loggedIn()) {
+      //   return <Navigate to="/entries" state={{ from: location }} replace />;
+      // }
+      // window.location.replace("/entries")
 
     } catch (err) {
       console.error(error);
@@ -49,7 +57,6 @@ const LoginForm = () => {
     }
 
     setUserFormData({
-      username: '',
       email: '',
       password: '',
     });
@@ -57,7 +64,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form noValidate validated={validated} onSubmit={(e) => handleFormSubmit(e)}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>

@@ -22,7 +22,7 @@ ul {
 	list-style-type: circle;
 }
 
-.remove {
+/* .remove {
 	font-family: 'Anonymous Pro', monospace;
 	background-color: #00232baf;
 	border: none;
@@ -36,8 +36,20 @@ ul {
 	display: inline-block;
 	text-decoration: none;
 	cursor: pointer;
-}
+} */
 
 .remove:hover {
 	opacity: 1;
+}
+
+.box {
+	font-family: 'Anonymous Pro', monospace;
+	resize: vertical;
+	margin-top: 15px;
+	height: 64%;
+	font-size: 1.5rem;
+	white-space: text-wrap;
+	overflow: hidden;
+	text-overflow: clip;
+	background-color: #c77dff28;
 }

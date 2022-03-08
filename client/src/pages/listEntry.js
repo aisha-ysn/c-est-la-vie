@@ -10,16 +10,19 @@ import { Link } from 'react-router-dom'
 // import '../assets/css/entries.css';
 
 
-const savedEntries = () => {
+const SavedEntries = () => {
     const { loading, data } = useQuery(GET_ME)
     const userData = data?.me || {};
 
-    const [removeEntries, { erro }] = useMutation(REMOVE_ENTRIES)
-    const handleDeleteEntries = async (entriesId) => {
+    const [removeEntries, { error }] = useMutation(REMOVE_ENTRIES)
+    const handleDeleteEntries = async (EntriesId) => {
         const token = Auth.loggedIn() ? Auth.getToken() : null;
+        if (!token) {
+            return false;
+        }
         try {
             const { data } = await removeEntries({
-                variables: { entriesId },
+                variables: { EntriesId },
             })
         } catch (err) {
             console.error(err);
@@ -49,12 +52,12 @@ const savedEntries = () => {
                 </ul>
             </div>
             <h2>My Entries</h2>
-            <div contentEditable>
-                {userData.savedEntries?.map((entry) => {
+            <div classname="box" contentEditable>
+                {userData.SavedEntries?.map((entry) => {
                     return (<div >
-                        <h2>{title}</h2>
-                        <p>body</p>
-                        <button className="remove">
+                        <h2>{entry.title}</h2>
+                        <p>{entry.content}</p>
+                        <button onClick={() => handleDeleteEntries(entry.EntriesId)}>
                             Remove
                         </button>
                     </div>)
@@ -65,4 +68,4 @@ const savedEntries = () => {
 }
 
 
-export default savedEntries;
+export default SavedEntries;
