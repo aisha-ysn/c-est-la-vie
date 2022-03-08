@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import {
   ApolloClient,
@@ -9,13 +9,15 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Navbar from './components/Navbar'
-import Entries from './pages/Entries';
-// import Form from './pages/Journal'
+import Entries from './pages/listEntry';
+import Form from './pages/addEntry'
 import Home from './pages/Home'
+// import Index from './pages/index'
 import LoginForm from './components/LoginForm'
 import SignupForm from './components/SignupForm'
 const httpLink = new createHttpLink({
-  uri:"/graphql"})
+  uri: "/graphql"
+})
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
@@ -37,54 +39,21 @@ const client = new ApolloClient({
 
 function App() {
   return (
-  <ApolloProvider client = {client}>
-    <Router>
-      <>
-        <Navbar />
-        <Switch>
-          
-          <Route exact path="/" component = {Home} />
-         
-          {/* <Route exact path="/journals" component ={Form}/> */}
-          <Route exact path="/login" component={LoginForm} />
-          <Route exact path="/entries" component={Entries} />
-          <Route exact path="/signup" component={SignupForm} />
-          {/* <Route render={() => <h1 className='display-2'>Wrong page!</h1>} /> */}
-        </Switch>
-      </>
-    </Router>
+    <ApolloProvider client={client}>
+      <Navbar />
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/signup" element={<SignupForm />} />
+            <Route path="/entries" element={<Entries />} />
+            <Route path="/journal" element={<Form />} />
+          </Routes>
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }
-  
 
-//   // Removes Entry
-//   removeEntry = index => {
-//     const { entries } = this.state
-
-//     this.setState({
-//       entries: entries.filter((entry, i) => {
-//         return i != index
-//       })
-//     })
-//   }
-
-// // Journal is shown under entries when submitted
-//   handleSubmit = entry => {
-//     this.setState({ entries: [...this.state.entries, entry] })
-//   }
-
-//   render() {
-//     const { entries } = this.state;
-
-//     return (
-//       <div className="App">
-//         <Form handleSubmit={this.handleSubmit} />
-//         <Entries entryData={entries} removeEntry={this.removeEntry} />
-//       </div>
-//     );
-//   }
-
-// }
-
-export default App;
+export default App

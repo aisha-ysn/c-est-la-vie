@@ -1,4 +1,4 @@
-/* h1 {
+h1 {
 	text-align: center;
 }
 
@@ -69,10 +69,10 @@
 	background-color: #c77dffa2;
 	box-shadow: 0 3px #7a2cbf4b;
 	transform: translateY(4px);
-} */
+} 
 
 /* MY LIFE TODAY LOGO */
-/* body {
+body {
 	height: calc(100vh - 8em);
 	padding: 4em;
 	color: rgba(0, 0, 0, 0.75);
@@ -90,10 +90,10 @@
 	white-space: nowrap;
 	overflow: hidden;
 	transform: translateY(-50%);
-} */
+}
 
 /* Animation */
-/* .anim-typewriter {
+.anim-typewriter {
 	animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
 }
 @keyframes typewriter {
@@ -111,9 +111,9 @@
 	to {
 		border-right-color: transparent;
 	}
-} */
+}
 
-/* .prompts{ 
+.prompts{ 
     position: absolute;
     right: 0px;
     top: 7%;
@@ -121,18 +121,18 @@ width: 24%;}
 
  ul {
     list-style-type: circle;
-    /* border: 2px solid yellow; */
-/* background-color: lightyellow; */
-/* background-color: #BBDEE6;
+border: 2px solid yellow;
+background-color: lightyellow;
+background-color: #BBDEE6;
     margin-bottom: 2cm;
     margin-top: 0.8cm;
     padding-top: 0.3cm;
     padding-bottom: 1.5cm;
- } */
-/* li {
+ }
+li { 
     margin: 5px;
-    /* background-color: lightyellow; */
-/* background-color: #BBDEE6;
-    margin-bottom: 0.2cm; */
+    background-color: lightyellow;
+background-color: #BBDEE6;
+    margin-bottom: 0.2cm;
 
-/* } */
+}

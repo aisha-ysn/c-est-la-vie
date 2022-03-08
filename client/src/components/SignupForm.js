@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from '@apollo/client';
 import { Form, Button, Alert } from 'react-bootstrap';
 import '../assets/css/home.css';
@@ -16,10 +16,10 @@ const SignupForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
- // set addUser with mutation
+  // set addUser with mutation
   const [addUser, { error }] = useMutation(ADD_USER);
 
-  let history = useHistory();
+  let navigate = useNavigate();
 
 
   const handleInputChange = (event) => {
@@ -43,7 +43,7 @@ const SignupForm = () => {
       });
 
       Auth.login(data.addUser.token);
-      history.push("/entries");
+      navigate("/entries");
     } catch (err) {
       console.error(err);
       setShowAlert(true);
